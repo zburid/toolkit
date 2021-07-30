@@ -1,0 +1,434 @@
+{
+    "hardware": [
+        {
+            "interface": "pcan",
+            "channel": ["PCAN_USBBUS1"]
+        },
+        {
+            "interface": "canalystii",
+            "channel": ["0", "1"]
+        },
+        {
+            "interface": "vector",
+            "channel": ["0", "1"]
+        }
+    ],
+    "depot": [
+        {
+            "name": "depot-A",
+            "bitrate": "500000",
+            "rx": {
+                "0x18ff0001": {
+                    "period": 1000,
+                    "field": {
+                        "refrige_switch": {
+                            "bitrange": [0, 1],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "open",
+                                "2": "invalid",
+                                "3": "invalid"
+                            }
+                        },
+                        "refrige_fresh_air_switch": {
+                            "bitrange": [2, 3],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "open",
+                                "2": "invalid",
+                                "3": "invalid"
+                            }
+                        },
+                        "refrige_work_mode": {
+                            "bitrange": [4, 7],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "refrige",
+                                "2": "ventilat",
+                                "3": "auto",
+                                "4": "froce refrige"
+                            }
+                        },
+                        "refrige_wind_speed": {
+                            "bitrange": [8,11],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "1",
+                                "2": "2",
+                                "3": "3",
+                                "4": "4",
+                                "5": "5",
+                                "6": "6",
+                                "7": "7"
+                            }
+                        },
+                        "refrige_compress_switch": {
+                            "bitrange": [12,13],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "open",
+                                "2": "invalid",
+                                "3": "invalid"
+                            }
+                        },
+                        "refrige_defrost_switch": {
+                            "bitrange": [14,15],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "open",
+                                "2": "invalid",
+                                "3": "invalid"
+                            }
+                        },
+                        "refrige_purify_switch": {
+                            "bitrange": [16,17],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "open",
+                                "2": "invalid",
+                                "3": "invalid"
+                            }
+                        },
+                        "refrige_engine_status": {
+                            "bitrange": [18,19],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "open",
+                                "2": "invalid",
+                                "3": "invalid"
+                            }
+                        },
+                        "refrige_indoor_temp": {
+                            "bitrange": [32,39],
+                            "truevalue": {
+                                "type": "cal",
+                                "min": 0,
+                                "max": 255,
+                                "offset": -40,
+                                "scale": 1
+                            }
+                        },
+                        "refrige_setted_temp": {
+                            "bitrange": [40,47],
+                            "truevalue": {
+                                "type": "cal",
+                                "min": 55,
+                                "max": 68,
+                                "offset": -40,
+                                "scale": 1
+                            }
+                        }
+                    }
+                },
+                "0x18ff0002": {
+                    "period": 1000,
+                    "field": {
+                        "heating_switch": {
+                            "bitrange": [0, 1],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "open",
+                                "2": "invalid",
+                                "3": "invalid"
+                            }
+                        },
+                        "heating_pump_switch": {
+                            "bitrange": [4, 5],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "open",
+                                "2": "invalid",
+                                "3": "invalid"
+                            }
+                        },
+                        "heating_heater_switch": {
+                            "bitrange": [6, 7],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "open",
+                                "2": "invalid",
+                                "3": "invalid"
+                            }
+                        },
+                        "heating_radiator_1_speed": {
+                            "bitrange": [8, 9],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "low",
+                                "2": "high",
+                                "3": "invalid"
+                            }
+                        },
+                        "heating_radiator_2_speed": {
+                            "bitrange": [10,11],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "low",
+                                "2": "high",
+                                "3": "invalid"
+                            }
+                        },
+                        "heating_radiator_3_speed": {
+                            "bitrange": [12,13],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "low",
+                                "2": "high",
+                                "3": "invalid"
+                            }
+                        },
+                        "heating_radiator_d_speed": {
+                            "bitrange": [14,15],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "low",
+                                "2": "high",
+                                "3": "invalid"
+                            }
+                        }
+                    }
+                },
+                "0x18ff0003": {
+                    "period": 1000,
+                    "field": {
+                        "defrost_switch": {
+                            "bitrange": [0, 1],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "open",
+                                "2": "invalid",
+                                "3": "invalid"
+                            }
+                        },
+                        "defrost_fresh_air_switch": {
+                            "bitrange": [2, 3],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "open",
+                                "2": "invalid",
+                                "3": "invalid"
+                            }
+                        },
+                        "defrost_wind_speed": {
+                            "bitrange": [8,11],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "1",
+                                "2": "2",
+                                "3": "3",
+                                "4": "4",
+                                "5": "5",
+                                "6": "6",
+                                "7": "7"
+                            }
+                        }
+                    }
+                }
+            },
+            "tx": {
+                "0x18ff0301": {
+                    "period": 1000,
+                    "field": {
+                        "refrige_switch": {
+                            "bitrange": [0, 1],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "open",
+                                "2": "invalid",
+                                "3": "invalid"
+                            }
+                        },
+                        "refrige_fresh_air_switch": {
+                            "bitrange": [2, 3],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "open",
+                                "2": "invalid",
+                                "3": "invalid"
+                            }
+                        },
+                        "refrige_work_mode": {
+                            "bitrange": [4, 7],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "refrige",
+                                "2": "ventilat",
+                                "3": "auto",
+                                "4": "froce refrige"
+                            }
+                        },
+                        "refrige_wind_speed": {
+                            "bitrange": [8,11],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "1",
+                                "2": "2",
+                                "3": "3",
+                                "4": "4",
+                                "5": "5",
+                                "6": "6",
+                                "7": "7"
+                            }
+                        },
+                        "refrige_purify_switch": {
+                            "bitrange": [16,17],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "open",
+                                "2": "invalid",
+                                "3": "invalid"
+                            }
+                        },
+                        "refrige_setted_temp": {
+                            "bitrange": [40,47],
+                            "truevalue": {
+                                "type": "cal",
+                                "min": 55,
+                                "max": 68,
+                                "offset": -40,
+                                "scale": 1
+                            }
+                        }
+                    }
+                },
+                "0x18ff0302": {
+                    "period": 1000,
+                    "field": {
+                        "heating_switch": {
+                            "bitrange": [0, 1],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "open",
+                                "2": "invalid",
+                                "3": "invalid"
+                            }
+                        },
+                        "heating_pump_switch": {
+                            "bitrange": [4, 5],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "open",
+                                "2": "invalid",
+                                "3": "invalid"
+                            }
+                        },
+                        "heating_heater_switch": {
+                            "bitrange": [6, 7],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "open",
+                                "2": "invalid",
+                                "3": "invalid"
+                            }
+                        },
+                        "heating_radiator_1_speed": {
+                            "bitrange": [8, 9],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "low",
+                                "2": "high",
+                                "3": "invalid"
+                            }
+                        },
+                        "heating_radiator_2_speed": {
+                            "bitrange": [10,11],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "low",
+                                "2": "high",
+                                "3": "invalid"
+                            }
+                        },
+                        "heating_radiator_3_speed": {
+                            "bitrange": [12,13],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "low",
+                                "2": "high",
+                                "3": "invalid"
+                            }
+                        },
+                        "heating_radiator_d_speed": {
+                            "bitrange": [14,15],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "low",
+                                "2": "high",
+                                "3": "invalid"
+                            }
+                        }
+                    }
+                },
+                "0x18ff0303": {
+                    "period": 1000,
+                    "field": {
+                        "defrost_switch": {
+                            "bitrange": [0, 1],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "open",
+                                "2": "invalid",
+                                "3": "invalid"
+                            }
+                        },
+                        "defrost_fresh_air_switch": {
+                            "bitrange": [2, 3],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "open",
+                                "2": "invalid",
+                                "3": "invalid"
+                            }
+                        },
+                        "defrost_wind_speed": {
+                            "bitrange": [8,11],
+                            "truevalue": {
+                                "type": "lut",
+                                "0": "closed",
+                                "1": "1",
+                                "2": "2",
+                                "3": "3",
+                                "4": "4",
+                                "5": "5",
+                                "6": "6",
+                                "7": "7"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
